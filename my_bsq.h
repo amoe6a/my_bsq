@@ -1,37 +1,22 @@
-#ifndef MY_BSQ_H
-#define MY_BSQ_H
+//
+// Created by amoeba on 21.05.21.
+//
 
-//board components
-#define SQUARE 'x'
-#define SPACE '.'
-#define WALL 'o'
-#define READLINE 512
+#ifndef MY_BSQ_MY_BSQ_H
+#define MY_BSQ_MY_BSQ_H
 
-//libraries
-#include <stdlib.h>
+
 #include <stdio.h>
-#include <string.h>
-#include <unistd.h>
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <dirent.h>
 
-//my.c
-int my_atoi(char* str);
-int my_strlen(char *s);
-void my_strcpy(char *s1, char *s2);
-void my_strcat(char *s1, char *s2);
-void my_concat(char **to, char *from);
-int find_line(char *str);
-int min(int a, int b, int c);
-void line_by_line(char *str);
-
-//my_readline.c
-char *my_readline(int fd);
-
-//my_bsq.c
-int *getBitField(int size);
-void _free (int lines, char** arr);
+void my_bsq(char* grid, int size, int row_num, int row_size);
+int my_positive_atoi(char * str);
+int ** turn_into_int_string(char * grid, int row_num, int row_size);
 
 
-#endif
+#endif //MY_BSQ_MY_BSQ_H
